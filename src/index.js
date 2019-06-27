@@ -52,51 +52,19 @@ function addBreeds(json) {
 
 
 breedDropdown.addEventListener('change', function (e) {
-    switch(breedDropdown.value){
-    case 'a':
+    if (breedDropdown.value === 'see-all') {
         dogBreeds.forEach(breed => {
-            if (!breed.innerText.startsWith("a")){
-            breed.style.display = "none"
-            }
-            else{
-                breed.style.display = "block"
-            }
-        })
-        break;
-    case 'b':
-        dogBreeds.forEach(breed => {
-            if (!breed.innerText.startsWith("b")){
-            breed.style.display = "none"
-            }
-            else{
-                breed.style.display = "block"
-            }
-        })
-        break;
-    case 'c':
-        dogBreeds.forEach(breed => {
-            if (!breed.innerText.startsWith("c")){
-            breed.style.display = "none"
-            }
-            else{
-                breed.style.display = "block"
-            }
-        })
-        break;
-    case 'd':
-        dogBreeds.forEach(breed => {
-            if (!breed.innerText.startsWith("d")){
-            breed.style.display = "none"
-            }
-            else{
-                breed.style.display = "block"
-            }
-        })
-        break;
-    default:
-        dogBreeds.forEach(breed => {
-            breed.style.display = "block"
+            breed.style.display = ""
         })
     }
-
+    else {
+        dogBreeds.forEach(breed => {
+            if (!breed.innerText.startsWith(breedDropdown.value)){
+            breed.style.display = "none"
+            }
+            else{
+                breed.style.display = ""
+            }
+        })
+    }
 })
